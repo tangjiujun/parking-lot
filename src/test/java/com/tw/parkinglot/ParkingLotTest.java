@@ -17,4 +17,17 @@ public class ParkingLotTest {
         // then
         assertThat(slotNo, is(1));
     }
+
+    @Test
+    public void should_takeout_1_car_when_parking_lot_had_parking_my_car() {
+        // given
+        ParkingLot parkingLot = new ParkingLot(10);
+        int slotNo = parkingLot.parking("川A88888");
+
+        // when
+        String carNo = parkingLot.takeout(slotNo);
+
+        // then
+        assertThat(carNo, is("川A88888"));
+    }
 }

@@ -19,4 +19,8 @@ public class ParkingLot {
         parkingSlots.put(slotNo, carNo);
         return slotNo;
     }
+
+    public String takeout(int slotNo) {
+        return parkingSlots.get(slotNo);
+    }
 }
