@@ -25,4 +25,16 @@ public class ParkingLot {
         return Optional.ofNullable(parkingSlots.remove(ticket))
                 .orElseThrow(() -> new IllegalStateException("Invalid ticket."));
     }
+
+    public boolean hasSlot() {
+        return parkingSlots.size() < maxSlotSize;
+    }
+
+    public boolean hasTicket(Ticket ticket) {
+        return parkingSlots.containsKey(ticket);
+    }
+
+    public int getEmptySlotSize() {
+        return maxSlotSize - parkingSlots.size();
+    }
 }
